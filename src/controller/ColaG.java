@@ -1,7 +1,7 @@
 package controller;
 import java.util.EmptyStackException;
 
-import Models.NodeGeneric;
+import models.NodeGeneric;
 
 public class ColaG<T> {
     private NodeGeneric<T> inicio;

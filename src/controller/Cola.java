@@ -1,7 +1,7 @@
 package controller;
 import java.util.EmptyStackException;
 
-import Models.Node;
+import models.Node;
 
 public class Cola {
     private Node inicio;

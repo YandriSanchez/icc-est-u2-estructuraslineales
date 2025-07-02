@@ -1,3 +1,5 @@
+import Ejercicio_01_sign.SignValidator;
+import Ejercicio_02_sorting.StackSorter;
 import controller.Cola;
 import controller.ColaG;
 import controller.StackGeneric;
@@ -7,6 +9,7 @@ import models.Persona;
 public class App {
     public static void main(String[] args) throws Exception {
         Stacks stack = new Stacks();
+
         stack.push(10);
         stack.push(-1);
         stack.push(5);
@@ -14,7 +17,7 @@ public class App {
         System.out.println("tam = " + stack.size());
         stack.printStack();
         stack.pop();
-        //stack.peek();
+
         System.out.println("tam = " + stack.size());
         stack.printStack();
 
@@ -23,6 +26,7 @@ public class App {
         stackGS.push("cuatro");
         System.out.println("tam = "+ stackGS.size());
         stackGS.printStack();
+        System.out.println("");
 
         Cola cola = new Cola();
         cola.add(5);
@@ -33,6 +37,7 @@ public class App {
         cola.remove();
         System.out.println("tam = " + cola.size);
         cola.printCola();
+        System.out.println("");
 
         Persona p1 = new Persona("Pablo");
         Persona p2 = new Persona("Juan");
@@ -42,11 +47,40 @@ public class App {
         colaPersonas.add(p1);
         colaPersonas.add(p2);
         colaPersonas.add(p3);
-        System.out.println(colaPersonas.size());
+        System.out.println("Cantidad de personas: "+colaPersonas.size());
         colaPersonas.printCola();
         System.out.println("Atiene a la persona => " + colaPersonas.remove().getNombre());
-        System.out.println(colaPersonas.size());
+        System.out.println("Cantidad de personas: "+colaPersonas.size());
         colaPersonas.printCola();
-    
+        System.out.println("");
+
+        System.out.println("-----Ejercicio 01 sign-----");
+        SignValidator sign = new SignValidator();
+        String input = "([]){}";
+        System.out.println("Input: "+input);
+        System.out.println("Output: "+sign.isValid(input));
+        input = "({)}";
+        System.out.println("Input: "+input);
+        System.out.println("Output: "+sign.isValid(input));
+
+        System.out.println("-----Ejercicio 02 sorting-----");
+        StackSorter sorting = new StackSorter();
+        Stacks pila = new Stacks();
+
+        pila.push(5);
+        pila.push(1);
+        pila.push(4);
+        pila.push(2);
+
+        System.out.println("Pila original: ");
+        pila.printStack();
+
+        sorting.sortStack(pila);
+
+        System.out.println("Pila ordenada:");
+        pila.printStack();
+
     }
+
+
 }
